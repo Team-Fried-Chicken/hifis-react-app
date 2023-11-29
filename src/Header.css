@@ -1,0 +1,79 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: #f0f0f0;
+	color: #fff;
+	margin-bottom: 30px;
+}
+
+.logo {
+	font-size: 1.5rem;
+}
+
+.left-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.left-buttons button {
+	width: 40%; /* Adjusted width to match input fields */
+	padding: 10px;
+	margin-left: 10px;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 10px; /* Optional: Add some border-radius for a rounded button */
+	background-color: #21383b; /* Optional: Change the background color */
+	color: white; /* Optional: Set text color */
+	cursor: pointer;
+	transition: background-color 0.3s; /* Optional: Add a smooth transition */
+}
+
+.left-buttons button:hover {
+	background-color: #162a2e; /* Optional: Change the background color on hover */
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.nav-links a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 15px;
+}
+
+.toggle-button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	display: none; /* initially hide for larger screens */
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 1024px) {
+	.nav-links {
+		display: none; /* initially hide for smaller screens */
+		flex-direction: column;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		background-color: #333;
+		z-index: 1;
+	}
+
+	.nav-links.show {
+		display: flex; /* show when mobile menu is open */
+	}
+
+	.toggle-button {
+		display: block; /* show toggle button for smaller screens */
+	}
+}

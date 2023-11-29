@@ -1,0 +1,96 @@
+/* src/AuthContainer.css */
+.auth-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1300px;
+	height: 400px;
+	margin: 30px auto 0;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 30px;
+	background-color: #b6bcbc;
+	box-shadow: 0 4px 100px rgba(0, 0, 0, 0.25);
+}
+
+.auth-container img {
+	max-width: 100%;
+	height: auto;
+	margin-left: 20px; /* Updated margin to be on the left */
+}
+
+.login-container {
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	background-color: rgba(247, 247, 247, 0.36);
+}
+
+.login-container h2 {
+	text-align: center; /* Center the text horizontally */
+	font-size: 36px;
+}
+
+.login-container input {
+	width: 100%;
+	padding: 15px;
+	margin-top: 15px; /* Add some spacing between input fields */
+	box-sizing: border-box;
+	border-radius: 20px;
+}
+
+.forgot-password {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.forgot-password a {
+	padding-left: 10px;
+	text-decoration: none;
+}
+
+.login-button {
+	display: flex;
+	justify-content: end;
+}
+
+.login-button button {
+	width: 40%; /* Adjusted width to match input fields */
+	padding: 15px;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 20px; /* Optional: Add some border-radius for a rounded button */
+	background-color: #21383b; /* Optional: Change the background color */
+	color: white; /* Optional: Set text color */
+	cursor: pointer;
+	transition: background-color 0.3s; /* Optional: Add a smooth transition */
+}
+
+.login-button button:hover {
+	background-color: #162a2e; /* Optional: Change the background color on hover */
+}
+
+@media screen and (max-width: 1024px) {
+	.auth-container {
+		/* Resetting styles for smaller screens */
+		width: auto;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	.login-container {
+		background-color: rgba(182, 188, 188, 0.69);
+		border-radius: 20px;
+		box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	.auth-container img {
+		display: none;
+	}
+}

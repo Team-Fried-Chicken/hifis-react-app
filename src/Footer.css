@@ -1,0 +1,31 @@
+/* src/Footer.css */
+.footer-container {
+	/* text-align: center; */
+	margin: 30px auto 30px;
+	padding: 20px;
+	background-color: #f0f0f0;
+	border-radius: 40px;
+	max-width: 1400px; /* Set max-width instead of width */
+	margin-left: auto; /* Center the container horizontally */
+	margin-right: auto; /* Center the container horizontally */
+}
+
+.container {
+	text-align: center;
+}
+
+.footer-links {
+	display: flex;
+	justify-content: space-evenly; /* Use space-evenly to evenly space the items */
+	flex-wrap: wrap; /* Allow items to wrap to the next line if the container is too narrow */
+	margin-bottom: 10px;
+}
+
+.footer-links p {
+	flex: 1; /* Each link will take an equal amount of space */
+	margin: 5px; /* Add some margin between the links */
+}
+
+.bold {
+	font-weight: bold;
+}
