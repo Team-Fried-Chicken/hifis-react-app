@@ -7,6 +7,7 @@ import Header from "./Header";
 const App = () => {
 	return (
 		<div>
+			<h2>Test.</h2>
 			<h1>Test.</h1>
 			{/* Always render Footer */}
 			<Header />
