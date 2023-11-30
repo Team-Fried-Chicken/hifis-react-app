@@ -3,9 +3,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 1300px;
 	height: 400px;
-	margin: 30px auto 0;
+	margin: 30px 150px 0;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 30px;
@@ -16,7 +15,8 @@
 .auth-container img {
 	max-width: 100%;
 	height: auto;
-	margin-left: 20px; /* Updated margin to be on the left */
+	margin-left: 20px;
+	/* Updated margin to be on the left */
 }
 
 .login-container {
@@ -28,14 +28,16 @@
 }
 
 .login-container h2 {
-	text-align: center; /* Center the text horizontally */
+	text-align: center;
+	/* Center the text horizontally */
 	font-size: 36px;
 }
 
 .login-container input {
 	width: 100%;
 	padding: 15px;
-	margin-top: 15px; /* Add some spacing between input fields */
+	margin-top: 15px;
+	/* Add some spacing between input fields */
 	box-sizing: border-box;
 	border-radius: 20px;
 }
@@ -56,19 +58,25 @@
 }
 
 .login-button button {
-	width: 40%; /* Adjusted width to match input fields */
+	width: 40%;
+	/* Adjusted width to match input fields */
 	padding: 15px;
 	box-sizing: border-box;
 	border: none;
-	border-radius: 20px; /* Optional: Add some border-radius for a rounded button */
-	background-color: #21383b; /* Optional: Change the background color */
-	color: white; /* Optional: Set text color */
+	border-radius: 20px;
+	/* Optional: Add some border-radius for a rounded button */
+	background-color: #21383b;
+	/* Optional: Change the background color */
+	color: white;
+	/* Optional: Set text color */
 	cursor: pointer;
-	transition: background-color 0.3s; /* Optional: Add a smooth transition */
+	transition: background-color 0.3s;
+	/* Optional: Add a smooth transition */
 }
 
 .login-button button:hover {
-	background-color: #162a2e; /* Optional: Change the background color on hover */
+	background-color: #162a2e;
+	/* Optional: Change the background color on hover */
 }
 
 @media screen and (max-width: 1024px) {

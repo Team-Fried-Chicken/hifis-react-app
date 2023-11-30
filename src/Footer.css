@@ -1,31 +1,231 @@
 /* src/Footer.css */
 .footer-container {
-	/* text-align: center; */
-	margin: 30px auto 30px;
+	margin: 30px 150px;
 	padding: 20px;
-	background-color: #f0f0f0;
+	background-color: var(--second-color);
 	border-radius: 40px;
-	max-width: 1400px; /* Set max-width instead of width */
-	margin-left: auto; /* Center the container horizontally */
-	margin-right: auto; /* Center the container horizontally */
+	/* text-align: center; */
 }
 
 .container {
 	text-align: center;
+	display: flex;
+	justify-content: space-around;
 }
 
 .footer-links {
 	display: flex;
-	justify-content: space-evenly; /* Use space-evenly to evenly space the items */
-	flex-wrap: wrap; /* Allow items to wrap to the next line if the container is too narrow */
+	flex-direction: column;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 	margin-bottom: 10px;
 }
 
 .footer-links p {
-	flex: 1; /* Each link will take an equal amount of space */
-	margin: 5px; /* Add some margin between the links */
+	flex: 1;
+	/* Each link will take an equal amount of space */
+	margin: 5px;
+	/* Add some margin between the links */
 }
 
 .bold {
 	font-weight: bold;
+}
+
+.footer-links a {
+	text-decoration: none;
+	font-family: var(--body-font);
+}
+
+.footer-grid li {
+	list-style: none;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1fr 1.5fr 1fr;
+	margin: auto 50px;
+	justify-content: center;
+}
+
+.footer-grid * {
+	margin-left: 30px;
+}
+
+.center {
+	text-align: center;
+}
+
+.footer-bottom {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+/* responsive************************** */
+@media (max-width: 1025px) {
+	.footer-grid {
+		grid-template-columns: repeat(6, 1fr);
+		margin: 0;
+	}
+
+	.footer-grid * {
+		margin-bottom: 10px;
+	}
+
+	#sup1,
+	#sup2,
+	#sup3 {
+		grid-column: 1 / 4;
+	}
+
+	#term1,
+	#term2,
+	#term3 {
+		grid-column: 4 / 7;
+	}
+
+	#sup1,
+	#term1 {
+		grid-row: 1/2;
+		place-self: center;
+	}
+
+	#sup2,
+	#term2 {
+		grid-row: 2/3;
+
+	}
+
+	#sup3,
+	#term3 {
+		grid-row: 3/4;
+		margin-bottom: 30px;
+	}
+
+	#about1 {
+		grid-column: 1 / 7;
+		grid-row: 4/5;
+		place-self: center;
+		margin-top: 15px;
+	}
+
+	#about2,
+	#about3,
+	#about4 {
+		grid-row: 5/6;
+		place-self: center;
+
+	}
+
+	#about2 {
+		grid-column: 1 / 3;
+
+	}
+
+	#about3 {
+		grid-column: 3/ 5;
+
+	}
+
+	#about4 {
+		grid-column: 5 / 7;
+
+	}
+
+	.footer-bottom {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 862px) {
+	.footer-container {
+		margin: 30px 5vw;
+	}
+}
+
+@media (max-width: 550px) {
+	.footer-grid * {
+		margin-left: 0;
+		justify-self: center;
+		text-align: center;
+	}
+
+	#sup1 {
+		grid-row: 1/2;
+		grid-column: 1/7;
+
+	}
+
+	#sup2,
+	#sup3 {
+		grid-row: 2/3;
+
+	}
+
+	#sup2,
+	#term2 {
+		grid-column: 1/4;
+		justify-self: center;
+	}
+
+	#sup3,
+	#term3 {
+		grid-column: 4/7;
+		text-align: center;
+	}
+
+	#term1 {
+		grid-row: 3/4;
+		grid-column: 1/7;
+		place-self: center;
+	}
+
+	#term2,
+	#term3 {
+		grid-row: 4/5;
+	}
+
+
+	#about1 {
+		grid-row: 5/6;
+	}
+
+	#about2,
+	#about3,
+	#about4 {
+		grid-row: 6/7;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer-bottom {
+		position: absolute;
+		margin-top: 30px;
+		display: grid;
+		grid-template-columns: 1fr 5fr;
+		text-align: left;
+	}
+
+	#HIFISlogo-footer {
+		height: 120px;
+		grid-row: 1/3;
+		grid-column: 1/2;
+	}
+
+	#hifis-footer {
+		font-size: 3rem;
+		justify-self: start;
+	}
+
+	#full-text-footer {
+		grid-row: 2;
+		grid-column: 2/3;
+		justify-self: start;
+		align-self: start;
+	}
+
+	.center {
+		text-align: left;
+	}
 }
