@@ -7,6 +7,13 @@ import Header from "./Header";
 const App = () => {
 	return (
 		<div>
+
+
+			
+			
+		
+			{/* Always render Header */}
+
 			<Header />
 			{/* Conditionally render AuthContainer based on screen width */}
 			<AuthContainer />
