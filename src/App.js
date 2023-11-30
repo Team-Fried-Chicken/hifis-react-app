@@ -5,17 +5,17 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 const App = () => {
-	return (
-		<div>
-			{/* Always render Footer */}
-			<Header />
-			{/* Conditionally render AuthContainer based on screen width */}
-			<AuthContainer />
+  return (
+    <div>
+      {/* Always render Footer */}
+      <Header />
+      {/* Conditionally render AuthContainer based on screen width */}
+      <AuthContainer />
 
-			{/* Always render Footer */}
-			<Footer />
-		</div>
-	);
+      {/* Always render Footer */}
+      <Footer />
+    </div>
+  );
 };
 
 export default App;
