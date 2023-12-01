@@ -24,7 +24,7 @@ const MenuBox = (props) => {
 const EndSurvey = () => {
     return (
         <section className="section-desktop endsurvey-section">
-            <h1>End of survey sdf</h1>
+            <h1>End of survey</h1>
 
 
             <div className="subsection-container">
