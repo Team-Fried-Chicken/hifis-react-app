@@ -1,0 +1,186 @@
+.new-survey {
+    overflow: hidden;
+}
+
+.add-surveyform {
+    position: relative;
+}
+
+.question-container,
+.btn-container {
+    display: flex;
+    margin: 15px 0;
+}
+
+.add-surveyform label {
+    font-weight: 700;
+    font-family: var(--body-font);
+    flex-basis: 15vw;
+}
+
+.input-box {
+    width: 30vw;
+    border-radius: 50px;
+    padding: 5px 20px;
+    border: 1px solid var(--second-color);
+    background-color: var(--second-color);
+}
+
+.input-box:focus {
+    outline-color: var(--first-color);
+}
+
+.add-surveyform textarea {
+    width: 30vw;
+    border-radius: 15px;
+    padding: 15px 20px;
+    border: 1px solid var(--second-color);
+    background-color: var(--second-color);
+}
+
+.add-surveyform textarea:focus {
+    outline-color: var(--first-color);
+}
+
+.error-ms {
+    color: var(--error-font);
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+
+
+.image {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    height: 20rem;
+}
+
+.add-surveyform button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 170px;
+    border: 1px solid var(--third-color);
+    font-family: var(--title-font);
+    font-weight: 600;
+    background-color: var(--third-color);
+    color: var(--white-color);
+}
+
+.back-btn:hover,
+.next-btn button:hover {
+    border: 1px solid var(--fifth-color);
+    background-color: var(--fifth-color);
+    cursor: pointer;
+}
+
+.next-btn button {
+    margin-left: 16vw;
+    border: 1px solid var(--first-color);
+    background-color: var(--first-color);
+}
+
+.add-color {
+    color: var(--error-font);
+}
+
+.drp-box option {
+    width: 50px;
+    box-shadow: 1px 5px 10px var(--fifth-color);
+    border: 1px solid var(--fifth-color);
+    border-radius: 15px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.drp-box:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+    width: 50px;
+
+}
+
+.circleimage {
+    display: none;
+    position: absolute;
+    right: -250px;
+    top: 250px;
+    height: 400px;
+    z-index: -1;
+}
+
+@media (max-width: 1347px) {
+    .image {
+        width: 28vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 980px) {
+    .image {
+        display: none;
+    }
+
+    .circleimage {
+        display: block;
+        position: absolute;
+    }
+
+    .new-survey {
+        padding: 0 5vw;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    .input-box,
+    .next-btn {
+        width: 100%;
+    }
+
+    .add-surveyform textarea {
+        width: 100%;
+    }
+
+    .next-btn {
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 770px) {
+    .question-container {
+        flex-direction: column;
+    }
+
+    .add-surveyform label {
+        flex-basis: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 476px) {
+    .next-btn button {
+        margin-left: 0;
+
+    }
+}
+
+@media (max-width: 387px) {
+    .btn-container {
+        flex-direction: column;
+    }
+
+    .add-surveyform button {
+        width: 100%;
+    }
+
+
+}

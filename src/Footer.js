@@ -1,33 +1,32 @@
-// src/Footer.js
 import React from "react";
-import "./Footer.css"; // Import the CSS file for styling
-
+import "./Footer.css";
+import Hifislogo from "./images/hifis-logo.svg";
 const Footer = () => {
 	return (
 		<div className="footer-container">
-			<div className="container">
-				<div className="footer-links">
-					<p className="bold">About</p>
-					<p className="bold">Terms of Service</p>
-					<p className="bold">Support</p>
-				</div>
-				<div className="footer-links">
-					<p>HIFIS</p>
-					<p>End-User License Agreement (EULA)</p>
-					<p>Homelessness Learning Hub</p>
-				</div>
-				<div className="footer-links">
-					<p>Release Note</p>
-					<p>Data Provision Agreement (DPA)</p>
-					<p>HIFIS User Guide</p>
-				</div>
-				<div className="footer-links">
-					<p>Contact</p>
-				</div>
-				<p className="bold">
-					HOMELESS INDIVIDUALS AND FAMILIES INFORMATION SYSTEM
-				</p>
+			<div className="footer-grid">
+				<p className="bold about-group" id="about1">About</p>
+				<p className="bold" id="term1">Terms of Service</p>
+				<p className="bold" id="sup1">Support</p>
+
+
+				<a href="https://www.infrastructure.gc.ca/homelessness-sans-abri/hifis-sisa/index-eng.html" className="p about-group" id="about2">HIFIS</a>
+				<a href="https://demo.hifis.ca/License/EULA?currentCulture=en-CA" className="p" id="term2">End-User License Agreement (EULA)</a>
+				<a href="https://homelessnesslearninghub.ca/?sfid=4533&_sft_categ=hifis" className="p" id="sup2">Homelessness Learning Hub</a>
+
+
+				<a href="https://www.infrastructure.gc.ca/homelessness-sans-abri/hifis-sisa/release-notes-mises-a-jour-eng.html" className="p about-group" id="about3">Release Note</a>
+				<a href="mailto:support@hifis.ca" className="p about-group" id="about4">Contact</a>
+				<a href="https://www.infrastructure.gc.ca/homelessness-sans-abri/hifis-sisa/dpa-etd-eng.html" className="p" id="term3">Data Provision Agreement (DPA)</a>
+				<a href="https://homelessnesslearninghub.ca/library/resources/hifis-user-guide/" className="p" id="sup3">HIFIS User Guide</a>
 			</div>
+			<br />
+			<div className="footer-bottom">
+				<p className="bold center" id="hifis-footer"> HIFIS</p>
+				<img src={Hifislogo} alt="HIFIS logo" height={25} id="HIFISlogo-footer" />
+				<p className="bold center" id="full-text-footer">HOMELESS INDIVIDUALS AND FAMILIES INFORMATION SYSTEM</p>
+			</div>
+
 		</div>
 	);
 };

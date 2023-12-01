@@ -1,19 +1,34 @@
 // src/App.js
 import React from "react";
-import AuthContainer from "./AuthContainer";
-import Footer from "./Footer";
 import Header from "./Header";
+import Footer from "./Footer";
+import AuthContainer from "./AuthContainer";
+import NewSurvey from "./NewSurvey";
+import LayoutDesktop from "./Layout-Survey-desktop";
+import EndSurvey from "./EndSurvey";
+import SurveyScroll from "./Survey-scrolling";
+import SurveyLists from "./Survey-lists";
 
 const App = () => {
 	return (
 		<div>
-			<h1>Welcome.</h1>
-			<h2>Test.</h2>
-			<h1>Test.</h1>
-			{/* Always render Footer */}
+
+
+			
+			
+		
+			{/* Always render Header */}
+
 			<Header />
 			{/* Conditionally render AuthContainer based on screen width */}
-			<AuthContainer />
+			{/* <AuthContainer /> */}
+
+			{/* <NewSurvey /> */}
+			{/* <EndSurvey /> */}
+			{/* <LayoutDesktop /> */}
+			<SurveyScroll />
+			{/* <SurveyLists /> */}
+
 
 			{/* Always render Footer */}
 			<Footer />
