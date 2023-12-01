@@ -21,6 +21,13 @@
   --black-color: black;
   --white-color: white;
   --bg-color: #F6F6F6;
+  --error-box: #EDCCCC;
+  --error-font: #F61C1C;
+
+  --Title-font-size-desktop: 3rem;
+  --Title-font-size-tablet: 3rem;
+  --second-title-des: 1.5rem;
+  --label-des: 1.2rem;
 }
 
 h1,
@@ -28,13 +35,38 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: var(--title-font);
 }
 
 p,
 .p {
   font-family: var(--body-font);
+}
+
+h1 {
+  font-size: var(--Title-font-size-desktop);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: var(--second-title-des);
+}
+
+section {
+  padding: 0 150px;
+}
+
+.new-survey,
+.section-desktop,
+.survey-scrolling {
+  margin-top: 80px;
 }
 
 body {
