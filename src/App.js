@@ -7,6 +7,7 @@ import MenuTablets from "./Shared_Components/menu_tablet/menu_tablet";
 import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import SurveyProgress from "./Shared_Components/survey_progress/servey_progress";
 import LoginError from "./Shared_Components/login_error/LoginError";
+import WelcomeHeader from "./Shared_Components/welcomeHeader/welcomeHeader";
 const App = () => {
   return (
     <div>
@@ -14,7 +15,8 @@ const App = () => {
       <Header />
       {/* Conditionally render AuthContainer based on screen width */}
       <AuthContainer />
-      <LoginError />
+      <WelcomeHeader />
+      {/* <LoginError /> */}
       {/* <MenuTablets /> */}
       {/* <SurveyProgress /> */}
       {/* <MenuDesktop /> */}
