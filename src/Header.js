@@ -10,6 +10,10 @@ import surveyListsIcon from "./images/surveylist-c.svg";
 import usercIcon from "./images/user-c.svg";
 import SignoutcIcon from "./images/signout-c.svg";
 
+import { Link } from "react-router-dom";
+import Home from "./pages/Home";
+import PitsurveyScroll from "./pages/PitsurveyScroll";
+
 const Header = () => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -21,7 +25,9 @@ const Header = () => {
 		<div className={`header ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
 			<div className="nav-img left">
 				<img src={Hifislogo} alt="HIFIS logo" />
+				<Link to="/">
 				<h1 id="text-logo"> HIFIS</h1>
+				</Link>
 			</div>
 			<div className={`nav-links ${isMobileMenuOpen ? "show " : " nav-right"}`} >
 				<a href="/" className="nav-right">
@@ -56,7 +62,9 @@ const Header = () => {
 			<aside id="side-drawer">
 				<div className="nav-img left left-side-drawer">
 					<img src={Hifislogo} alt="HIFIS logo" />
-					<h1 id="text-logo"> HIFIS</h1>
+					<Link to="/">
+						<h1 id="text-logo"> HIFIS</h1>
+					</Link>
 				</div>
 				<header>
 					<div className="right-hamberger">
@@ -78,12 +86,12 @@ const Header = () => {
 						</div>
 						<p>Live surveys - Paging</p>
 					</a>
-					<a href="/" className="nav-right ">
+					<Link to="/PitsurveyScroll" className="nav-right ">
 						<div className="icon-side">
 							<img src={ScrollIcon} alt="Live surveys - Scrolling" />
 						</div>
 						<p>Live surveys - Scrolling</p>
-					</a>
+					</Link>
 					<a href="/" className="nav-right ">
 						<div className="icon-side">
 							<img src={surveyListsIcon} alt="Survey Lists" />

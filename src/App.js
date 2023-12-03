@@ -9,30 +9,41 @@ import EndSurvey from "./EndSurvey";
 import SurveyScroll from "./Survey-scrolling";
 import SurveyLists from "./Survey-lists";
 
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link
+  } from "react-router-dom";
+
+import Home from "./pages/Home";
+import PitsurveyScroll from "./pages/PitsurveyScroll";
+
 const App = () => {
 	return (
-		<div>
-
-
-			
-			
-		
-			{/* Always render Header */}
-
+		<Router>
 			<Header />
-			{/* Conditionally render AuthContainer based on screen width */}
-			{/* <AuthContainer /> */}
-
-			{/* <NewSurvey /> */}
-			{/* <EndSurvey /> */}
-			{/* <LayoutDesktop /> */}
-			<SurveyScroll />
-			{/* <SurveyLists /> */}
-
-
-			{/* Always render Footer */}
+			<Routes>
+				<Route exact path="/" element={<Home/>}></Route>
+				<Route path="/PitsurveyScroll" element={<PitsurveyScroll/>}></Route>
+			</Routes>
 			<Footer />
-		</div>
+		</Router>
+		
+		
+		//<div>
+			//{/* Always render Header */}
+			//<Header />
+			//{/* Conditionally render AuthContainer based on screen width */}
+			//{/* <AuthContainer /> */}
+			//{/* <NewSurvey /> */}
+			//{/* <EndSurvey /> */}
+			//{/* <LayoutDesktop /> */}
+			//<SurveyScroll />
+			//{/* <SurveyLists /> */}
+			//{/* Always render Footer */}
+			//<Footer />
+		//</div>
 	);
 };
 
