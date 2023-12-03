@@ -8,6 +8,8 @@ import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import SurveyProgress from "./Shared_Components/survey_progress/servey_progress";
 import LoginError from "./Shared_Components/login_error/LoginError";
 import WelcomeHeader from "./Shared_Components/welcomeHeader/welcomeHeader";
+import WelcomePage from "./WelcomePage";
+
 const App = () => {
   return (
     <div>
@@ -15,12 +17,13 @@ const App = () => {
       <Header />
       {/* Conditionally render AuthContainer based on screen width */}
       <AuthContainer />
-      <WelcomeHeader />
+      {/* <WelcomeHeader /> */}
       {/* <LoginError /> */}
       {/* <MenuTablets /> */}
       {/* <SurveyProgress /> */}
       {/* <MenuDesktop /> */}
       {/* Always render Footer */}
+      <WelcomePage />
       <Footer />
     </div>
   );

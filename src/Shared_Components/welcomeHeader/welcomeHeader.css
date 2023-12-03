@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
   width: 100%;
   max-width: 1441px;
   background-color: ;
@@ -13,16 +13,16 @@
 .rightGroup {
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 
-.leftGroup {
+/* .leftGroup {
   margin-left: 150px;
 }
 
 .rightGroup {
   margin-right: 150px;
-}
+} */
 
 .Maple {
   padding-right: 15px;
