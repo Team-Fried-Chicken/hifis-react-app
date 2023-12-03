@@ -12,9 +12,9 @@ const App = () => {
       {/* Always render Footer */}
       <Header />
       {/* Conditionally render AuthContainer based on screen width */}
-      {/* <AuthContainer /> */}
+      <AuthContainer />
       {/* <MenuTablets /> */}
-      <SurveyProgress />
+      {/* <SurveyProgress /> */}
       {/* <MenuDesktop /> */}
       {/* Always render Footer */}
       <Footer />

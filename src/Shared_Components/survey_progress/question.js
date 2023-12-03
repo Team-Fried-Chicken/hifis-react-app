@@ -2,9 +2,9 @@ import React from "react";
 import "./question.css";
 const Question = () => {
   return (
-    <li>
+    <li className="question-container">
       <span className="question-circle"></span>
-      <span>Where do you live tonight?</span>
+      <span className="question">Where do you live tonight?</span>
     </li>
   );
 };

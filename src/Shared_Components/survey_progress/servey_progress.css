@@ -1,0 +1,18 @@
+.surveyProgressContainer {
+  width: 379px;
+  height: 553px;
+  border-radius: 20px;
+  background-color: rgba(33, 56, 59, 1);
+  padding: 20px;
+}
+.pagingTag {
+  width: 366px;
+  height: 82px;
+  background-color: rgba(246, 246, 246, 1);
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font: Roboto Black;
+  line-height: 30.47px;
+  border-radius: 50px, 0px, 0px, 50px;
+}
