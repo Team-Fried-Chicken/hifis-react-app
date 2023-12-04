@@ -6,7 +6,7 @@
   padding: 20px;
 }
 .pagingTag {
-  width: 366px;
+  width: 359px;
   height: 82px;
   background-color: rgba(246, 246, 246, 1);
   display: flex;
@@ -14,5 +14,6 @@
   font-size: 26px;
   font: Roboto Black;
   line-height: 30.47px;
-  border-radius: 50px, 0px, 0px, 50px;
+  border-radius: 50px 0 0 50px;
+  margin-bottom: 20px;
 }

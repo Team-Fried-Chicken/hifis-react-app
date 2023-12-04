@@ -1,0 +1,71 @@
+/* QuestionPage.css */
+
+.QuestionPageContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+}
+
+.ProgressAndQuestions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.QuestionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 720px;
+  height: 516px;
+}
+
+.AbandonButton {
+  align-self: flex-start;
+  margin-top: 10px;
+  align-self: flex-end;
+  margin-right: 10px;
+  border-radius: 50px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.Question {
+  margin-top: 20px;
+  text-align: left;
+  width: 610px;
+  height: 113px;
+  margin-left: 30px;
+  margin-top: 50px;
+  font-family: Roboto Black;
+  font-size: 35px;
+}
+
+.BackAndNext {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 610px;
+  margin-left: 30px;
+  margin-top: 250px;
+}
+
+select {
+  -webkit-appearance: none;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.BackButton,
+.NextButton {
+  border-radius: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
