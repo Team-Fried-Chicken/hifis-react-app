@@ -1,0 +1,44 @@
+.menu-container {
+  display: flex;
+}
+
+.menu-item {
+  height: 89px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  color: white;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+.first-item {
+  background-color: rgba(182, 188, 188, 1);
+  width: 385px;
+}
+
+.second-item {
+  background-color: rgba(182, 188, 188, 1);
+  width: 395px;
+  margin-left: 23px;
+}
+.third-item {
+  background-color: rgba(182, 188, 188, 1);
+  width: 319px;
+  margin-left: 23px;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: black;
+}
+
+.logo-svg {
+  margin-right: 20px;
+  margin-top: 5px;
+  max-width: 100%;
+  background-color: ;
+}

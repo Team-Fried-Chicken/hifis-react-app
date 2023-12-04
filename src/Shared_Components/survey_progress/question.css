@@ -1,0 +1,17 @@
+/* Add this to your CSS */
+.question-circle {
+  display: inline-block;
+  width: 10px; /* Adjust size as needed */
+  height: 10px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: rgba(72, 112, 115, 1); /* Adjust color as needed */
+  margin-right: 8px; /* Adjust spacing as needed */
+}
+.question {
+  color: white;
+  font-size: 20px;
+}
+
+.question-container {
+  margin-bottom: 18px;
+}

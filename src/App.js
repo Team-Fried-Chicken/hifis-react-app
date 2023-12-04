@@ -1,39 +1,36 @@
 // src/App.js
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 import AuthContainer from "./AuthContainer";
-import NewSurvey from "./NewSurvey";
-import LayoutDesktop from "./Layout-Survey-desktop";
-import EndSurvey from "./EndSurvey";
-import SurveyScroll from "./Survey-scrolling";
-import SurveyLists from "./Survey-lists";
+import Footer from "./Footer";
+import Header from "./Header";
+import MenuTablets from "./Shared_Components/menu_tablet/menu_tablet";
+import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
+import SurveyProgress from "./Shared_Components/survey_progress/servey_progress";
+import LoginError from "./Shared_Components/login_error/LoginError";
+import WelcomeHeader from "./Shared_Components/welcomeHeader/welcomeHeader";
+import WelcomePage from "./WelcomePage";
+import QuestionPage from "./QuestionPage";
+import MiniLoginPage from "./Ipad mini/MiniLoginPage";
 
 const App = () => {
-	return (
-		<div>
-
-
-			
-			
-		
-			{/* Always render Header */}
-
-			<Header />
-			{/* Conditionally render AuthContainer based on screen width */}
-			{/* <AuthContainer /> */}
-
-			{/* <NewSurvey /> */}
-			{/* <EndSurvey /> */}
-			{/* <LayoutDesktop /> */}
-			<SurveyScroll />
-			{/* <SurveyLists /> */}
-
-
-			{/* Always render Footer */}
-			<Footer />
-		</div>
-	);
+  return (
+    <div>
+      {/* Always render Footer */}
+      <Header />
+      {/* Conditionally render AuthContainer based on screen width */}
+      {/* <AuthContainer /> */}
+      {/* <MiniLoginPage /> */}
+      <QuestionPage />
+      {/* <WelcomeHeader /> */}
+      {/* <LoginError /> */}
+      {/* <MenuTablets /> */}
+      {/* <SurveyProgress /> */}
+      {/* <MenuDesktop /> */}
+      {/* Always render Footer */}
+      {/* <WelcomePage /> */}
+      <Footer />
+    </div>
+  );
 };
 
 export default App;
