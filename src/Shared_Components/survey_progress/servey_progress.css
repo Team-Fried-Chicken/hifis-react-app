@@ -5,7 +5,8 @@
   background-color: rgba(33, 56, 59, 1);
   padding: 20px;
 }
-.pagingTag {
+.pagingTag,
+.scrollingTag {
   width: 359px;
   height: 82px;
   background-color: rgba(246, 246, 246, 1);
@@ -16,4 +17,10 @@
   line-height: 30.47px;
   border-radius: 50px 0 0 50px;
   margin-bottom: 20px;
+}
+
+.scrollingTag {
+  margin-top: 150px;
+  background-color: rgba(33, 56, 59, 1);
+  color: white;
 }

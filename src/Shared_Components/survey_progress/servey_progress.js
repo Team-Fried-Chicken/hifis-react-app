@@ -2,6 +2,7 @@ import React from "react";
 import Question from "./question";
 import "./servey_progress.css";
 import { ReactComponent as SVCPagingLogo } from "./svgLogo-paging.svg";
+import { ReactComponent as SVCScrollingLogo } from "./svgLogo-scrolling.svg";
 const SurveyProgress = () => {
   return (
     <div className="surveyProgressContainer">
@@ -15,6 +16,10 @@ const SurveyProgress = () => {
         <Question />
         <Question />
         <Question />
+        <div className="scrollingTag ">
+          <SVCScrollingLogo />
+          <span>Live serveys - Scrolling</span>
+        </div>
       </ul>
     </div>
   );

@@ -69,3 +69,22 @@ select {
   padding: 10px 30px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1024px) {
+  .QuestionPageContainer {
+    width: auto;
+    height: auto;
+    padding: 0 20px;
+  }
+  select {
+    width: 500px;
+    align-items: center;
+  }
+  .BackButton,
+  .NextButton {
+    border-radius: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+    width: 200px;
+  }
+}

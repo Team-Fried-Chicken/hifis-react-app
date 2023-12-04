@@ -19,8 +19,8 @@ const App = () => {
       <Header />
       {/* Conditionally render AuthContainer based on screen width */}
       {/* <AuthContainer /> */}
-      <MiniLoginPage />
-      {/* <QuestionPage /> */}
+      {/* <MiniLoginPage /> */}
+      <QuestionPage />
       {/* <WelcomeHeader /> */}
       {/* <LoginError /> */}
       {/* <MenuTablets /> */}

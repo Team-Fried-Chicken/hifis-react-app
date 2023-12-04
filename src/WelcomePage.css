@@ -33,3 +33,19 @@
 .WelcomeFooter {
   width: 100%;
 }
+
+@media screen and (max-width: 1024px) {
+  .WelcomePageContainer {
+    width: auto;
+    height: auto;
+    padding: 0 5vw;
+  }
+  .WelcomeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .WelcomeMessage {
+    width: auto;
+  }
+}
