@@ -10,6 +10,7 @@ import LoginError from "./Shared_Components/login_error/LoginError";
 import WelcomeHeader from "./Shared_Components/welcomeHeader/welcomeHeader";
 import WelcomePage from "./WelcomePage";
 import QuestionPage from "./QuestionPage";
+import MiniLoginPage from "./Ipad mini/MiniLoginPage";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
       {/* Always render Footer */}
       <Header />
       {/* Conditionally render AuthContainer based on screen width */}
-      <AuthContainer />
+      {/* <AuthContainer /> */}
+      <MiniLoginPage />
       {/* <QuestionPage /> */}
       {/* <WelcomeHeader /> */}
       {/* <LoginError /> */}
