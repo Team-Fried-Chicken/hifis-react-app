@@ -32,23 +32,24 @@ const App = () => {
 			<Routes>
 				<Route exact path="/" element={<AuthContainer/>}></Route>
 				<Route path="/PitsurveyScroll" element={<SurveyScroll/>}></Route>
+				<Route path="/QuestionPage" element={<QuestionPage />}></Route>
 			</Routes>
 			<Footer />
 		</Router>
 		
 		
 		//<div>
-			//{/* Always render Header */}
-			//<Header />
 			//{/* Conditionally render AuthContainer based on screen width */}
-			//{/* <AuthContainer /> */}
-			//{/* <NewSurvey /> */}
-			//{/* <EndSurvey /> */}
-			//{/* <LayoutDesktop /> */}
-			//<SurveyScroll />
-			//{/* <SurveyLists /> */}
-			//{/* Always render Footer */}
-			//<Footer />
+      //{/* <AuthContainer /> */}
+      //{/* <MiniLoginPage /> */}
+      //<QuestionPage />
+      //{/* <WelcomeHeader /> */}
+      //{/* <LoginError /> */}
+      //{/* <MenuTablets /> */}
+      //{/* <SurveyProgress /> */}
+      //{/* <MenuDesktop /> */}
+      //{/* Always render Footer */}
+      //{/* <WelcomePage /> */}
 		//</div>
 	);
 };
