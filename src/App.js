@@ -24,8 +24,9 @@ const App = () => {
 		<Router>
 			<Header />
 			<Routes>
-				<Route exact path="/" element={<Home/>}></Route>
+				<Route exact path="/" element={<AuthContainer/>}></Route>
 				<Route path="/PitsurveyScroll" element={<PitsurveyScroll/>}></Route>
+				<Route path="/PitsurveyPagging" element={<PitsurveyScroll/>}></Route>
 			</Routes>
 			<Footer />
 		</Router>
