@@ -12,7 +12,6 @@ import SurveyLists from "./Survey-lists";
 const App = () => {
 	return (
 		<div>
-			<h1>Test</h1>
 			{/* Always render Header */}
 
 			<Header />
