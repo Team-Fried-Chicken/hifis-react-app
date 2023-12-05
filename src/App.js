@@ -16,8 +16,6 @@ import {
 	Link
   } from "react-router-dom";
 
-import Home from "./pages/Home";
-import PitsurveyScroll from "./pages/PitsurveyScroll";
 
 const App = () => {
 	return (
@@ -25,8 +23,7 @@ const App = () => {
 			<Header />
 			<Routes>
 				<Route exact path="/" element={<AuthContainer/>}></Route>
-				<Route path="/PitsurveyScroll" element={<PitsurveyScroll/>}></Route>
-				<Route path="/PitsurveyPagging" element={<PitsurveyScroll/>}></Route>
+				<Route path="/PitsurveyScroll" element={<SurveyScroll/>}></Route>
 			</Routes>
 			<Footer />
 		</Router>

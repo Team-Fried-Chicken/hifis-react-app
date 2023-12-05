@@ -11,8 +11,6 @@ import usercIcon from "./images/user-c.svg";
 import SignoutcIcon from "./images/signout-c.svg";
 
 import { Link } from "react-router-dom";
-import Home from "./pages/Home";
-import PitsurveyScroll from "./pages/PitsurveyScroll";
 
 const Header = () => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
