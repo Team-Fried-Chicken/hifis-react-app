@@ -1,8 +1,8 @@
 // src/AuthContainer.js
 import React, { useState } from "react";
-import "./AuthContainer.css"; // Import the CSS file for AuthContainer styling
-import handshake from "../src/images/handshake.png";
-const AuthContainer = () => {
+import "./MiniLoginPage.css"; // Import the CSS file for AuthContainer styling
+import handshake from "../images/handshake.png";
+const MiniLoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -45,4 +45,4 @@ const AuthContainer = () => {
   );
 };
 
-export default AuthContainer;
+export default MiniLoginPage;

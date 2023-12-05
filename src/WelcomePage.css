@@ -1,0 +1,51 @@
+/* WelcomePage.css */
+
+.WelcomePageContainer {
+  width: 1269px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 638px; */
+  margin: 0 auto;
+}
+
+.WelcomeContent {
+  display: flex;
+  flex-direction: row; /* Align WelcomeMessage and WelcomeImage in a row */
+  justify-content: space-between; /* Add space between WelcomeMessage and WelcomeImage */
+  align-items: flex-start; /* Align items to the start of the cross axis (top) */
+  margin-top: 50px;
+}
+
+.WelcomeMessage {
+  width: 400px;
+  margin-left: 80px;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.WelcomeImage {
+  /* Add styles for the WelcomeImage */
+  margin-right: 80px;
+}
+
+.WelcomeFooter {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .WelcomePageContainer {
+    width: auto;
+    height: auto;
+    padding: 0 5vw;
+  }
+  .WelcomeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .WelcomeMessage {
+    width: auto;
+  }
+}

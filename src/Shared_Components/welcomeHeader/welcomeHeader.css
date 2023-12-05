@@ -1,0 +1,36 @@
+.WelcomeHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 20px; */
+  width: 100%;
+  max-width: 1441px;
+  background-color: ;
+  margin: 0 auto;
+}
+
+.leftGroup,
+.rightGroup {
+  display: flex;
+  align-items: center;
+  /* margin: 0 10px; */
+}
+
+/* .leftGroup {
+  margin-left: 150px;
+}
+
+.rightGroup {
+  margin-right: 150px;
+} */
+
+.Maple {
+  padding-right: 15px;
+}
+
+.Earth {
+  padding-right: 15px;
+}
+.Human {
+  padding-right: 15px;
+}
