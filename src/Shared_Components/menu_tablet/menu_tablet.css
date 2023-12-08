@@ -1,0 +1,41 @@
+.menu-container {
+  display: flex;
+}
+
+.menu-item {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  color: white;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+.first-item {
+  background-color: rgba(72, 112, 115, 1);
+  width: 310px;
+}
+
+.second-item {
+  background-color: rgba(72, 112, 115, 1);
+  width: 322px;
+  margin-left: 23px;
+}
+.third-item {
+  background-color: rgba(72, 112, 115, 1);
+  width: 216px;
+  margin-left: 23px;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+}
+
+.item-content .logo-svg {
+  margin-right: 20px;
+  margin-top: 5px;
+  max-width: 100%;
+}

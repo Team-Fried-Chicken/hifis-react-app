@@ -1,0 +1,43 @@
+.surveyProgressContainer {
+  width: 310px;
+  border-radius: 20px;
+  background-color: var(--fifth-color);
+  padding: 20px;
+  padding-left: 10px;
+}
+
+.surveyProgressContainer ul {
+  list-style: none;
+}
+
+.surveyProgressContainer p {
+  font-size: 1.3rem;
+}
+
+.pagingTag,
+.scrollingTag {
+  width: 300px;
+  height: 80px;
+  background-color: var(--white-color);
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  line-height: 30.47px;
+  border-radius: 50px 0 0 50px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.scrollingTag {
+  background-color: var(--fifth-color);
+  color: var(--white-color);
+}
+
+.scrollingTag a {
+  color: var(--white-color);
+}
+
+.pagingTag img,
+.scrollingTag img {
+  height: 25px;
+}

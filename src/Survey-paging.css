@@ -1,0 +1,15 @@
+.question-box {
+    padding: 0 50px;
+}
+
+@media screen and (max-width: 1130px) {
+    .question-box {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .surveyProgressContainer {
+        display: none;
+    }
+}

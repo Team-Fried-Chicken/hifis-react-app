@@ -1,0 +1,18 @@
+.question-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+.question {
+  color: var(--white-color);
+  font-size: 20px;
+}
+
+.question-container {
+  margin-bottom: 18px;
+  margin-left: 15px;
+}

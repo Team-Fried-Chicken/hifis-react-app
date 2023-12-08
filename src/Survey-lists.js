@@ -3,7 +3,9 @@ import "./Layout-Survey-desktop.css";
 import "./Survey-lists.css";
 import bin from "./images/bin.svg"
 import pen from "./images/pen.svg"
-
+import Header from "./Header";
+import Footer from "./Footer";
+import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 // add data here for responsive
 const ResponsiveTable = () => {
     return (
@@ -35,53 +37,58 @@ const ResponsiveTable = () => {
 
 const SurveyLists = () => {
     return (
-        <section className="section-desktop survey-list-section">
-            <h1>Survey Lists</h1>
+        <>
+            <Header />
+            <section className="section-desktop survey-list-section">
+                <h1>Survey Lists</h1>
+                <MenuDesktop className="WelcomeMenu" />
+                <div className="subsection-container">
+                    {/* progress bar */}
+                    <div></div>
 
-            <div className="subsection-container">
-                {/* progress bar */}
-                <div>Shang </div>
+                    <div className="content-box">
+                        {/* put content here */}
+                        <p>Showing 10 entries</p>
+                        <table>
+                            <thead>
+                                <th>Survey No.</th>
+                                <th>Time taken</th>
+                                <th>Status</th>
+                                <th>Location</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2023-11-15  7:26 PM</td>
+                                    <td>Incomplete</td>
+                                    <td>Ottawa</td>
+                                    <td>
+                                        <a href=""><img src={pen} alt="" /></a>
+                                        <a href=""><img src={bin} alt="" /></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2023-11-15  7:26 PM</td>
+                                    <td>Incomplete</td>
+                                    <td>Ottawa</td>
+                                    <td>
+                                        <a href=""><img src={pen} alt="" /></a>
+                                        <a href=""><img src={bin} alt="" /></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                <div className="content-box">
-                    {/* put content here */}
-                    <p>Showing 10 entries</p>
-                    <table>
-                        <thead>
-                            <th>Survey No.</th>
-                            <th>Time taken</th>
-                            <th>Status</th>
-                            <th>Location</th>
-                            <th>Action</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2023-11-15  7:26 PM</td>
-                                <td>Incomplete</td>
-                                <td>Ottawa</td>
-                                <td>
-                                    <a href=""><img src={pen} alt="" /></a>
-                                    <a href=""><img src={bin} alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2023-11-15  7:26 PM</td>
-                                <td>Incomplete</td>
-                                <td>Ottawa</td>
-                                <td>
-                                    <a href=""><img src={pen} alt="" /></a>
-                                    <a href=""><img src={bin} alt="" /></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <ResponsiveTable />
+                    </div>
 
-                    <ResponsiveTable />
                 </div>
+            </section >
+            <Footer />
+        </>
 
-            </div>
-        </section >
     );
 };
 
