@@ -4,8 +4,11 @@ import "./WelcomePage.css";
 import Welcomepage from "./images/welcomepage.png";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useAuth } from "./contexts/AuthProvider";
 
 const WelcomePage = () => {
+  const { setToken } = useAuth();
+
   return (
     <>
       <Header />
@@ -23,7 +26,6 @@ const WelcomePage = () => {
           <img src={Welcomepage} alt="wel" />
         </div>
       </section>
-      <Footer />
     </>
 
   );

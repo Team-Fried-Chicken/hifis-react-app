@@ -1,15 +1,12 @@
 import React from "react";
-import HeaderNotLogIn from "./Header-notlogin";
-import Footer from "./Footer";
-import Login from "./Login";
+import AuthProvider from "./contexts/AuthProvider";
+import Routes from "./routes/Routes";
 
 const App = () => {
 	return (
-		<>
-			<HeaderNotLogIn />
-			<Login />
-			<Footer />
-		</>
+		<AuthProvider>
+			<Routes />
+		</AuthProvider>
 	);
 };
 

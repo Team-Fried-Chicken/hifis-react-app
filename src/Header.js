@@ -11,7 +11,6 @@ import surveyListsIcon from "./images/surveylist-c.svg";
 import usercIcon from "./images/user-c.svg";
 import SignoutcIcon from "./images/signout-c.svg";
 
-
 const Header = () => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -25,13 +24,13 @@ const Header = () => {
 				<img src={Hifislogo} alt="HIFIS logo" />
 				<h1 id="text-logo"> HIFIS</h1>
 			</div> */}
-			<Link to="/">
+			<Link to="/welcome">
 				<div className="nav-img left">
 					<img src={Hifislogo} alt="HIFIS logo" />
 					<h1 id="text-logo">HIFIS</h1>
 				</div>
 			</Link>
-			<div className={`nav-links ${isMobileMenuOpen ? "show " : " nav-right"}`} >
+			<div className={`nav-links ${isMobileMenuOpen ? "show " : " nav-right"}`}>
 				<a href="" className="nav-right">
 					<img src={LangIcon} alt="Language" />
 					<p>EN</p>
