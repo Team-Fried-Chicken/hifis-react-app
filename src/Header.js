@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import Hifislogo from "./images/hifis-logo.svg";
 import LangIcon from "./images/lang.svg";
@@ -19,16 +20,22 @@ const Header = () => {
 
 	return (
 		<div className={`header ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
-			<div className="nav-img left">
+			{/* <div className="nav-img left">
 				<img src={Hifislogo} alt="HIFIS logo" />
 				<h1 id="text-logo"> HIFIS</h1>
-			</div>
-			<div className={`nav-links ${isMobileMenuOpen ? "show " : " nav-right"}`} >
-				<a href="/" className="nav-right">
+			</div> */}
+			<Link to="/welcome">
+				<div className="nav-img left">
+					<img src={Hifislogo} alt="HIFIS logo" />
+					<h1 id="text-logo">HIFIS</h1>
+				</div>
+			</Link>
+			<div className={`nav-links ${isMobileMenuOpen ? "show " : " nav-right"}`}>
+				<a href="" className="nav-right">
 					<img src={LangIcon} alt="Language" />
 					<p>EN</p>
 				</a>
-				<a href="/" className="nav-right">
+				<a href="" className="nav-right">
 					<img src={UserIcon} alt="Account" />
 					<p>Account</p>
 				</a>
@@ -54,10 +61,16 @@ const Header = () => {
 			</div>
 			{/* after click */}
 			<aside id="side-drawer">
-				<div className="nav-img left left-side-drawer">
+				{/* <div className="nav-img left left-side-drawer">
 					<img src={Hifislogo} alt="HIFIS logo" />
 					<h1 id="text-logo"> HIFIS</h1>
-				</div>
+				</div> */}
+				<Link to="/">
+					<div className="nav-img left left-side-drawer">
+						<img src={Hifislogo} alt="HIFIS logo" />
+						<h1 id="text-logo"> HIFIS</h1>
+					</div>
+				</Link>
 				<header>
 					<div className="right-hamberger">
 						<a href="/" className="lang">
@@ -72,25 +85,25 @@ const Header = () => {
 				</header>
 
 				<ul id="mysideBar">
-					<a href="/" className="nav-right ">
+					<a href="/addevent" className="nav-right ">
 						<div className="icon-side">
 							<img src={PagingIcon} alt="Live surveys - Paging" />
 						</div>
 						<p>Live surveys - Paging</p>
 					</a>
-					<a href="/" className="nav-right ">
+					<a href="/addevent-scrolling" className="nav-right ">
 						<div className="icon-side">
 							<img src={ScrollIcon} alt="Live surveys - Scrolling" />
 						</div>
 						<p>Live surveys - Scrolling</p>
 					</a>
-					<a href="/" className="nav-right ">
+					<a href="/surveylists" className="nav-right ">
 						<div className="icon-side">
 							<img src={surveyListsIcon} alt="Survey Lists" />
 						</div>
 						<p>Survey Lists</p>
 					</a>
-					<a href="/" className="nav-right ">
+					<a href="" className="nav-right ">
 						<div className="icon-side">
 							<img src={usercIcon} alt="Account" />
 						</div>

@@ -68,8 +68,8 @@
 .image-display-circle {
     position: absolute;
     z-index: -1;
-    left: 150px;
-    bottom: 200px;
+    left: 120px;
+    top: 450px;
     height: 400px;
 }
 

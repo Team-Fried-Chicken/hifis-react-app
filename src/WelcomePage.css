@@ -1,0 +1,76 @@
+/* WelcomePage.css */
+.WelcomeContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.WelcomeContent {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.WelcomeContent img {
+  height: 32vw;
+}
+
+.WelcomeImage {
+  margin-right: 80px;
+}
+
+.WelcomeFooter {
+  width: 100%;
+}
+
+.WelcomeContent p {
+  line-height: 2;
+  font-size: 1.3rem;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  background-color: var(--fifth-color);
+  color: var(--white-color);
+}
+
+@media screen and (max-width: 1347px) {
+  .menu-item {
+    min-width: 20vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .WelcomeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .WelcomeMessage {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .WelcomePageContainer {
+    padding: 0 5vw;
+  }
+
+  .menu-item {
+    padding: 20px;
+  }
+
+  .menu-item h4 {
+    font-size: 2.2vw;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+  .WelcomeContent img {
+    height: 62vw;
+  }
+}

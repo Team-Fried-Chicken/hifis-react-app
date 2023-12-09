@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
 import "./Layout-Survey-desktop.css";
-import "./Survey-scrolling.css";
+import "./Survey-paging.css";
+import SurveyProgress from "./Shared_Components/survey_progress/servey_progress";
 import Header from "./Header";
 import Footer from "./Footer";
-import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import { useNavigate } from "react-router-dom";
 
 // use this component for the question with dropdown
@@ -108,28 +107,18 @@ const CalDay = () => {
     );
 }
 
-
-const SurveyScroll = () => {
-    const [showQuestions1, setShowQuestions1] = useState(false);
-    const [showQuestions2, setShowQuestions2] = useState(false);
-    const [showQuestions3, setShowQuestions3] = useState(false);
-
-    const onClick1 = () => { showQuestions1 ? setShowQuestions1(false) : setShowQuestions1(true) };
-    const onClick2 = () => { showQuestions2 ? setShowQuestions2(false) : setShowQuestions2(true) };
-    const onClick3 = () => { showQuestions3 ? setShowQuestions3(false) : setShowQuestions3(true) };
+// This page is a template. To use it, copy, change the name, and put your content in "put content here."
+const LayoutDesktop = () => {
     let navigate = useNavigate();
     return (
-
         <>
             <Header />
-            <section className="section-desktop">
+            <section className="section-desktop survey-paging">
                 <h1>Add PiT survey live</h1>
-                <MenuDesktop className="WelcomeMenu" />
-                <h2>Survey Details</h2>
 
                 <div className="subsection-container">
                     {/* progress bar */}
-                    <div></div>
+                    <SurveyProgress />
 
                     <div className="content-box">
 
@@ -137,33 +126,11 @@ const SurveyScroll = () => {
                         <button className="abandon-btn">&#x2716; Abandon your survey</button>
 
                         {/* put content here */}
-                        <div>
-                            <div className="question-type" >
-                                <h3 className="topic" onClick={onClick1}>Screen Questions</h3>
-                                <div className="show-questions" >
-                                    {showQuestions1 ? <DropdownQuestion /> : null}
-                                </div>
-                            </div>
+                        <div className="question-box">
+                            <DropdownQuestion />
                         </div>
-                        <div>
-                            <div className="question-type" >
-                                <h3 className="topic topic2" onClick={onClick2}>Core Questions</h3>
-                                <div className="show-questions" >
-                                    {showQuestions2 ? <DropdownQuestion /> : null}
-                                    {showQuestions2 ? <CheckListsQuestions /> : null}
-                                    {showQuestions2 ? <AddTextQuestions /> : null}
-                                    {showQuestions2 ? <CalDay /> : null}
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="question-type" >
-                                <h3 className="topic topic3" onClick={onClick3}>Optional Questions</h3>
-                                <div className="show-questions" >
-                                    {showQuestions3 ? <DropdownQuestion /> : null}
-                                </div>
-                            </div>
-                        </div>
+
+
 
                         {/* btn box */}
                         <div className="btn-container-question">
@@ -180,4 +147,4 @@ const SurveyScroll = () => {
     );
 };
 
-export default SurveyScroll;
+export default LayoutDesktop;

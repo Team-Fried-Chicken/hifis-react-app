@@ -65,8 +65,15 @@ section {
 
 .new-survey,
 .section-desktop,
-.survey-scrolling {
+.survey-scrolling,
+.auth-container,
+.WelcomePageContainer {
   margin-top: 80px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);
 }
 
 body {
