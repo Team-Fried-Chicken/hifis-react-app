@@ -26,6 +26,7 @@ const WelcomePage = () => {
           <img src={Welcomepage} alt="wel" />
         </div>
       </section>
+      <Footer/>
     </>
 
   );
