@@ -7,6 +7,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import axios from "axios";
+import { useAuth } from "./contexts/AuthProvider";
+
+const apiUrl = "http://localhost:3001/api";
+
 // add data here for responsive
 const ResponsiveTable = () => {
 	return (
@@ -40,13 +44,19 @@ const ResponsiveTable = () => {
 
 const SurveyLists = () => {
 	const [surveyEntries, setSurveyEntries] = useState([]);
+	const { token } = useAuth();
+
+	const authAxios = axios.create({
+		baseURL: apiUrl,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	});
 
 	useEffect(() => {
 		const fetchSurveyData = async () => {
 			try {
-				const response = await axios.get(
-					"http://localhost:3001/auth/pitsurvey"
-				);
+				const response = await authAxios.get(`/pitsurvey`);
 				if (response.status === 200) {
 					setSurveyEntries(response.data);
 				} else {
@@ -57,7 +67,7 @@ const SurveyLists = () => {
 			}
 		};
 		fetchSurveyData();
-	}, []);
+	}, [token, authAxios]);
 
 	return (
 		<>
