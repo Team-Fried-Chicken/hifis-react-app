@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Hifislogo from "./images/hifis-logo.svg";
 import LangIcon from "./images/lang.svg";
@@ -10,14 +10,23 @@ import ScrollIcon from "./images/scroll-c.svg";
 import surveyListsIcon from "./images/surveylist-c.svg";
 import usercIcon from "./images/user-c.svg";
 import SignoutcIcon from "./images/signout-c.svg";
+import { useAuth } from "./contexts/AuthProvider";
 
 const Header = () => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const { setToken } = useAuth();
+	const navigate = useNavigate();
 
 	const toggleMobileMenu = () => {
 		setMobileMenuOpen(!isMobileMenuOpen);
 	};
 
+	const handleLogout = () => {
+		setToken();
+		setTimeout(() => {
+			navigate("/login");
+		}, 3000);
+	};
 	return (
 		<div className={`header ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
 			{/* <div className="nav-img left">
@@ -39,7 +48,14 @@ const Header = () => {
 					<img src={UserIcon} alt="Account" />
 					<p>Account</p>
 				</a>
-				<a href="/" className="nav-right">
+				<a
+					href="/login"
+					className="nav-right"
+					onClick={(e) => {
+						e.preventDefault();
+						handleLogout();
+					}}
+				>
 					<img src={SignoutIcon} alt="Logout" />
 					<p>Logout</p>
 				</a>

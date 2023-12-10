@@ -10,6 +10,7 @@ import ErrorImage from "./images/loginError.png";
 import { useAuth } from "./contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import axios from "axios"
 
 const LoginError = () => {
 	return (
@@ -33,25 +34,19 @@ const Login = () => {
 	const navigate = useNavigate();
 
 	const handleLogin = async (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		try {
-			const response = await fetch("http://localhost:3001/auth/login", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					username: username,
-					password: password,
-				}),
-			});
-
-			if (response.ok) {
-				const data = await response.json();
-				console.log("Login successful:", data);
-
-				setToken("token", data.accessToken);
-				navigate("/welcome");
+		  const response = await axios.post("http://localhost:3001/auth/login", {
+			username: username,
+			password: password,
+		  });
+	  
+		  if (response.status === 200) {
+			const data = response.data;
+			console.log("Login successful:", data);
+	  
+			setToken("token", data.accessToken);
+			navigate("/welcome");
 
 			} else {
 				const error = await response.json();

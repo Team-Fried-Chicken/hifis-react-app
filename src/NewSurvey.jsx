@@ -71,9 +71,6 @@ const NewSurvey = () => {
 
                     {/* submit btn */}
                     <div className="btn-container">
-                        <label>
-                            <button type="button" className="back-btn" onClick={() => navigate(-1)}>Back</button>
-                        </label>
                         <div className="next-btn">
                             <button>Begin</button>
                         </div>
