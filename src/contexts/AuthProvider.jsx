@@ -13,10 +13,12 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 	//Retrive token value from cookie if it exists
 	const [token, setToken_] = useState(Cookies.get("token"));
+	const [user, setUser] = useState(null);
 
 	//Set the token value, updates the token state using setToken_ and stores the token value in the cookie.
-	const setToken = (newToken) => {
+	const setToken = (newToken, newUser) => {
 		setToken_(newToken);
+		setUser(newUser);
 	};
 
 	//Set the default authorization header
@@ -33,6 +35,7 @@ const AuthProvider = ({ children }) => {
 	const contextValue = useMemo(
 		() => ({
 			token,
+			user,
 			setToken,
 		}),
 		[token]

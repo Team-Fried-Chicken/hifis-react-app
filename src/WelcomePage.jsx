@@ -1,14 +1,11 @@
-import React from "react";
+import {useEffect} from "react";
 import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import "./WelcomePage.css";
 import Welcomepage from "./images/welcomepage.png";
 import Header from "./Header";
 import Footer from "./Footer";
-import { useAuth } from "./contexts/AuthProvider";
 
 const WelcomePage = () => {
-  const { setToken } = useAuth();
-
   return (
     <>
       <Header />

@@ -34,8 +34,6 @@
 	height: 2.5vw;
 }
 
-
-
 .langbox img {
 	height: 2.5vw;
 }
@@ -114,7 +112,6 @@
 	left: 20vw;
 	bottom: -15vw;
 	z-index: 2;
-
 }
 
 #green-circle {
@@ -124,8 +121,6 @@
 	right: -16vw;
 	z-index: 2;
 }
-
-
 
 @media screen and (max-width: 810px) {
 	.auth-container {
@@ -168,7 +163,7 @@
 		width: calc(30vw + 50px);
 		position: absolute;
 		right: -5vw;
-		top: calc(5vw + 120px)
+		top: calc(5vw + 120px);
 	}
 
 	#dark-circle {
@@ -177,14 +172,12 @@
 		position: absolute;
 		left: -14vw;
 		top: calc(-25vw + 50px);
-
 	}
-
 }
 
 @media screen and (max-width: 530px) {
 	.login-container {
-		width: 100%
+		width: 100%;
 	}
 }
 

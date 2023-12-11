@@ -12,20 +12,20 @@ import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import axios from "axios"
 
-const LoginError = () => {
-	return (
-		<div className="loginErrorContainer">
-			<div className="errorContainer">
-				<img src={ErrorImage} alt="errorImage" />
-				<div className="errorInfoContainer">
-					<SVCExclamationLogo />
-					<h3>Incorrect Username or Password</h3>
-				</div>
-				<a href="" className="errorCloseButton">X</a>
-			</div>
-		</div>
-	);
-};
+// const LoginError = () => {
+// 	return (
+// 		<div className="loginErrorContainer">
+// 			<div className="errorContainer">
+// 				<img src={ErrorImage} alt="errorImage" />
+// 				<div className="errorInfoContainer">
+// 					<SVCExclamationLogo />
+// 					<h3>Incorrect Username or Password</h3>
+// 				</div>
+// 				<a href="" className="errorCloseButton">X</a>
+// 			</div>
+// 		</div>
+// 	);
+// };
 
 const Login = () => {
 	const [username, setUsername] = useState("");
@@ -36,25 +36,23 @@ const Login = () => {
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		try {
-		  const response = await axios.post("http://localhost:3001/auth/login", {
+		  const response = await axios.post("http://localhost:3001/api/login", {
 			username: username,
 			password: password,
 		  });
 	  
 		  if (response.status === 200) {
 			const data = response.data;
-			console.log("Login successful:", data);
-	  
-			setToken("token", data.accessToken);
+			console.log("User Information:", data.user);
+			const { userId, username } = data.user;
+			setToken(data.accessToken, { userId, username });
 			navigate("/welcome");
 
 			} else {
 				const error = await response.json();
-				console.error("Login failed:", error.message);
-				// You can handle login failure, show an error message, etc.
 			}
 		} catch (error) {
-			console.error("Error during login:", error);
+			console.error("Error during login:", error);			
 		}
 	};
 
@@ -93,7 +91,7 @@ const Login = () => {
 			<img src={darkCircle} alt="handshake" id="dark-circle" />
 			<img src={whiteCircle} alt="handshake" id="white-circle" />
 			<img src={darkkCircle} alt="handshake" id="green-circle" />
-			<LoginError />
+			{/* <LoginError /> */}
 		</div>
 		<Footer/>
 		</>
