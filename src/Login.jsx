@@ -43,7 +43,9 @@ const Login = () => {
 	  
 		  if (response.status === 200) {
 			const data = response.data;
-			setToken(data.accessToken);
+			console.log("User Information:", data.user);
+			const { userId, username } = data.user;
+			setToken(data.accessToken, { userId, username });
 			navigate("/welcome");
 
 			} else {
