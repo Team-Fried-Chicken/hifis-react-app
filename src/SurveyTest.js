@@ -60,8 +60,8 @@ const AllQuestions = () => {
     useEffect(() => {
         const fetchSurveyData = async () => {
             try {
-                const entriesResponse = await axios.get("http://localhost:3001/auth/questions");
-                const answersResponse = await axios.get("http://localhost:3001/auth/answers");
+                const entriesResponse = await axios.get("http://localhost:3001/api/questions");
+                const answersResponse = await axios.get("http://localhost:3001/api/answers");
 
                 if (entriesResponse.status === 200 && answersResponse.status === 200) {
                     setSurveyEntries(entriesResponse.data);
