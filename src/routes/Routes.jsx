@@ -9,6 +9,7 @@ import Login from "../Login";
 import SurveyScroll from "../Survey-scrolling";
 import EndSurvey from "../EndSurvey";
 import SurveyLists from "../Survey-lists";
+import SurveyTest from "../SurveyTest";
 
 const Routes = () => {
     const { token } = useAuth();
@@ -52,6 +53,10 @@ const Routes = () => {
                 {
                     path: "/surveylists",
                     element: <SurveyLists/>,
+                },
+                {
+                    path: "/surveytest",
+                    element: <SurveyTest/>,
                 },
             ],
         },
