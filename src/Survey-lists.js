@@ -11,23 +11,32 @@ import { useAuth } from "./contexts/AuthProvider";
 
 const apiUrl = "http://localhost:3001/api";
 
-const ResponsiveTable = ({ surveyEntry }) => {
+const ResponsiveTable = ({ surveyEntry, onDelete }) => {
 	return (
 		<div className="table-box">
 			<div className="row head-box">
 				<h5>{`Survey No. ${surveyEntry.SurveyNo}`}</h5>
 				<div className="row">
-					<a href={`edit/${surveyEntry.id}`}>
+					<a href={`edit/${surveyEntry.SurveyNo}`}>
 						<img src={pen} alt="Edit" />
 					</a>
-					<a href={`delete/${surveyEntry.id}`}>
+					<a href="#" onClick={() => onDelete(surveyEntry.SurveyNo)}>
 						<img src={bin} alt="Delete" />
 					</a>
 				</div>
 			</div>
 			<div className="row table-body">
 				<h5>Time Taken</h5>
-				<p>{surveyEntry.CreatedDate}</p>
+				<p>
+					{new Date(surveyEntry.CreatedDate).toLocaleString("en-US", {
+						month: "numeric",
+						day: "numeric",
+						year: "numeric",
+						hour: "numeric",
+						minute: "numeric",
+						hour12: true,
+					})}
+				</p>
 			</div>
 			<div className="row table-body">
 				<h5>Status</h5>
@@ -68,6 +77,29 @@ const SurveyLists = () => {
 		fetchSurveyData();
 	}, [token, authAxios]);
 
+	const handleDelete = async (surveyNo) => {
+		const confirmDelete = window.confirm(
+			"Are you sure you want to delete this survey?"
+		);
+		if (!confirmDelete) {
+			return;
+		}
+
+		try {
+			const response = await authAxios.delete(`/pitsurvey/${surveyNo}`);
+			if (response.status === 200) {
+				// Survey deleted successfully, update the state
+				setSurveyEntries((prevEntries) =>
+					prevEntries.filter((entry) => entry.SurveyNo !== surveyNo)
+				);
+			} else {
+				console.error("Failed to delete survey");
+			}
+		} catch (error) {
+			console.error("Error during delete:", error);
+		}
+	};
+
 	return (
 		<>
 			<Header />
@@ -94,15 +126,24 @@ const SurveyLists = () => {
 								{surveyEntries.map((entry) => (
 									<tr key={entry.id}>
 										<td>{entry.SurveyNo}</td>
-										<td>{entry.CreatedDate}</td>
+										<td>
+											{new Date(entry.CreatedDate).toLocaleString("en-US", {
+												month: "numeric",
+												day: "numeric",
+												year: "numeric",
+												hour: "numeric",
+												minute: "numeric",
+												hour12: true,
+											})}
+										</td>
 										<td>{entry.SurveyStatus}</td>
 										<td>{entry.Location}</td>
 										<td>
 											<a href="">
 												<img src={pen} alt="" />
 											</a>
-											<a href="">
-												<img src={bin} alt="" />
+											<a href="#" onClick={() => handleDelete(entry.SurveyNo)}>
+												<img src={bin} alt="Delete" />
 											</a>
 										</td>
 									</tr>
@@ -110,7 +151,11 @@ const SurveyLists = () => {
 							</tbody>
 						</table>
 						{surveyEntries.map((entry) => (
-							<ResponsiveTable key={entry.id} surveyEntry={entry} />
+							<ResponsiveTable
+								key={entry.id}
+								surveyEntry={entry}
+								onDelete={handleDelete}
+							/>
 						))}
 					</div>
 				</div>
