@@ -14,6 +14,7 @@ import SurveyTest from "../SurveyTest";
 const Routes = () => {
     const { token } = useAuth();
 
+<<<<<<<< < Temporary merge branch 1
     const routesForPublic = [
         {
             path: "/",
@@ -21,6 +22,8 @@ const Routes = () => {
         }
     ]
 
+=========
+>>>>>>>>> Temporary merge branch 2
     const routesForAuthenticatedOnly = [
         {
             path: "/",
@@ -65,7 +68,12 @@ const Routes = () => {
 
     const routesforNotAuthenticatedOnly = [
         {
+<<<<<<<<< Temporary merge branch 1
 
+=========
+            path: "/",
+            element: <Login />,
+>>>>>>>>> Temporary merge branch 2
         },
     ];
 
