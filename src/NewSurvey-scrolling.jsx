@@ -29,18 +29,17 @@ const NewSurvey = () => {
 
 	const [predictedSurveyNo, setPredictedSurveyNo] = useState("");
 
-	const [pitShiftOptions] = useState([
-		`${
-			user.username
-		}, ${new Date().toLocaleDateString()}, @ FROM 8 AM to 12 PM`,
-		`${
-			user.username
-		}, ${new Date().toLocaleDateString()}, @ FROM 12 PM to 4 PM`,
-		`${user.username}, ${new Date().toLocaleDateString()}, @ FROM 4 PM to 8 PM`,
-		`${
-			user.username
-		}, ${new Date().toLocaleDateString()}, @ FROM 8 PM to 12 AM`,
-	]);
+	const [pitShiftOptions] = useState(() => {
+		const currentDate = new Date().toLocaleDateString();
+		return user
+		  ? [
+			  `${user.username}, ${currentDate}, @ FROM 8 AM to 12 PM`,
+			  `${user.username}, ${currentDate}, @ FROM 12 PM to 4 PM`,
+			  `${user.username}, ${currentDate}, @ FROM 4 PM to 8 PM`,
+			  `${user.username}, ${currentDate}, @ FROM 8 PM to 12 AM`,
+			]
+		  : [];
+	  });
 	
 	const authAxios = axios.create({
 		baseURL: apiUrl,
@@ -81,7 +80,13 @@ const NewSurvey = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Survey Data:", surveyData);
+		
+		if (surveyData.location === "") {
+			// Set an error state or display an error message
+			console.error("Location is required");
+			return;
+		  }
+
 		try {
 			// Assuming `surveyData` contains the required data for creating a new survey
 		  const response = await authAxios.post("/createsurvey", surveyData);
@@ -172,25 +177,27 @@ const NewSurvey = () => {
 
 					{/* one box input */}
 					<div className="question-container">
-						<label htmlFor="location">
-							Location<span className="add-color">*</span>
-						</label>
-						<div className="input-container">
+					<label htmlFor="location">
+						Location<span className="add-color">*</span>
+					</label>
+					<div className="input-container">
 						<input
-							type="text"
-							name="location"
-							id="location"
-							className="input-box"
-							value={surveyData.location}
-							onChange={(e) =>
-								setSurveyData((prevData) => ({
-								...prevData,
-								location: e.target.value,
-								}))
-							}
-							/>
-							<p className="error-ms">This field is required</p>
-						</div>
+						type="text"
+						name="location"
+						id="location"
+						className="input-box"
+						value={surveyData.location}
+						onChange={(e) =>
+							setSurveyData((prevData) => ({
+							...prevData,
+							location: e.target.value,
+							}))
+						}
+						/>
+						{surveyData.location === "" && (
+						<p className="error-ms">This field is required</p>
+						)}
+					</div>
 					</div>
 
 					{/* one box input */}

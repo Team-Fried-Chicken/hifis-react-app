@@ -125,7 +125,14 @@ const Header = () => {
 						</div>
 						<p>Account</p>
 					</a>
-					<a href="/" className="nav-right ">
+					<a
+						href="/"
+						className="nav-right"
+						onClick={(e) => {
+							e.preventDefault();
+							handleLogout();
+						}}
+					>
 						<div className="icon-side">
 							<img src={SignoutcIcon} alt="Logout" />
 						</div>
