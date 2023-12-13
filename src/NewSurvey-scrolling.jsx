@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import axios from "axios";
 import { useAuth } from "./contexts/AuthProvider";
-import SurveyScroll from "./Survey-scrolling";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const apiUrl = "http://localhost:3001/api";
 
@@ -28,6 +28,8 @@ const NewSurvey = () => {
 	const { token, user } = useAuth();
 
 	const [predictedSurveyNo, setPredictedSurveyNo] = useState("");
+
+	const navigate = useNavigate();
 
 	const [pitShiftOptions] = useState(() => {
 		const currentDate = new Date().toLocaleDateString();
@@ -95,6 +97,7 @@ const NewSurvey = () => {
 			// Survey created successfully
 			console.log("Survey created successfully");
 			// Optionally, you can redirect the user or perform other actions
+			navigate("/surveyscrolling")
 		  } else {
 			// Handle error response
 			console.error("Failed to create survey");
