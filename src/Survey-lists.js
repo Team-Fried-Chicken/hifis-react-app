@@ -11,32 +11,31 @@ import { useAuth } from "./contexts/AuthProvider";
 
 const apiUrl = "http://localhost:3001/api";
 
-// add data here for responsive
-const ResponsiveTable = () => {
+const ResponsiveTable = ({ surveyEntry }) => {
 	return (
 		<div className="table-box">
 			<div className="row head-box">
-				<h5>Survey No. 1</h5>
+				<h5>{`Survey No. ${surveyEntry.SurveyNo}`}</h5>
 				<div className="row">
-					<a href="">
-						<img src={pen} alt="" />
+					<a href={`edit/${surveyEntry.id}`}>
+						<img src={pen} alt="Edit" />
 					</a>
-					<a href="">
-						<img src={bin} alt="" />
+					<a href={`delete/${surveyEntry.id}`}>
+						<img src={bin} alt="Delete" />
 					</a>
 				</div>
 			</div>
 			<div className="row table-body">
 				<h5>Time Taken</h5>
-				<p>2023-11-15 7:26 PM</p>
+				<p>{surveyEntry.CreatedDate}</p>
 			</div>
 			<div className="row table-body">
 				<h5>Status</h5>
-				<p>Incomplete</p>
+				<p>{surveyEntry.SurveyStatus}</p>
 			</div>
 			<div className="row table-body">
 				<h5>Location</h5>
-				<p>Ottawa</p>
+				<p>{surveyEntry.Location}</p>
 			</div>
 		</div>
 	);
@@ -110,7 +109,9 @@ const SurveyLists = () => {
 								))}
 							</tbody>
 						</table>
-						<ResponsiveTable />
+						{surveyEntries.map((entry) => (
+							<ResponsiveTable key={entry.id} surveyEntry={entry} />
+						))}
 					</div>
 				</div>
 			</section>
