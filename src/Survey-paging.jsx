@@ -6,6 +6,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 
+const apiUrl = "http://localhost:3001/api";
+
 // use this component for the question with dropdown
 const DropdownQuestion = () => {
     return (
@@ -109,7 +111,12 @@ const CalDay = () => {
 
 // This page is a template. To use it, copy, change the name, and put your content in "put content here."
 const LayoutDesktop = () => {
-    let navigate = useNavigate();
+    
+    const navigate = useNavigate();
+
+	const endSurvey = () => {
+		navigate("/surveyend");
+	};
     return (
         <>
             <Header />
@@ -123,7 +130,7 @@ const LayoutDesktop = () => {
                     <div className="content-box">
 
                         {/* abandon box */}
-                        <button className="abandon-btn">&#x2716; Abandon your survey</button>
+                        <button className="abandon-btn" type="button" onClick={() => endSurvey()}>&#x2716; Abandon your survey</button>
 
                         {/* put content here */}
                         <div className="question-box">
@@ -135,7 +142,7 @@ const LayoutDesktop = () => {
                         {/* btn box */}
                         <div className="btn-container-question">
                             <button type="button" className="back-btn" onClick={() => navigate(-1)}>Back</button>
-                            <button className="next-btn">Submit</button>
+                            <button className="next-btn" type="button" onClick={() => endSurvey()}>Submit</button>
                         </div>
                     </div>
 

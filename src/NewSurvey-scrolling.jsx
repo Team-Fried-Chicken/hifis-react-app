@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import axios from "axios";
 import { useAuth } from "./contexts/AuthProvider";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const apiUrl = "http://localhost:3001/api";
 

@@ -36,6 +36,7 @@ const DropdownQuestion = ({ question, options }) => {
 		</div>
 	);
 };
+
 //Use this when the questions are for "select all that apply."
 // We change it to checkbox.
 // ex. question number  1, 8b, 14, 15, 4 in optional, 6 in optional
@@ -175,7 +176,12 @@ const SurveyScroll = () => {
 	const onClick3 = () => {
 		showQuestions3 ? setShowQuestions3(false) : setShowQuestions3(true);
 	};
-	let navigate = useNavigate();
+	const navigate = useNavigate();
+
+	const endSurvey = () => {
+		navigate("/surveyend");
+	};
+
 	return (
 		<>
 			<Header />
@@ -190,7 +196,11 @@ const SurveyScroll = () => {
 
 					<div className="content-box">
 						{/* abandon box */}
-						<button className="abandon-btn">
+						<button
+							type="button"
+							className="abandon-btn"
+							onClick={() => endSurvey()}
+						>
 							&#x2716; Abandon your survey
 						</button>
 
@@ -240,7 +250,13 @@ const SurveyScroll = () => {
 							>
 								Back
 							</button>
-							<button className="next-btn">Submit</button>
+							<button
+								type="button"
+								className="next-btn"
+								onClick={() => endSurvey()}
+							>
+								Submit
+							</button>
 						</div>
 					</div>
 				</div>
