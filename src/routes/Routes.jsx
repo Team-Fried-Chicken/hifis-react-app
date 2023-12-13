@@ -13,6 +13,13 @@ import SurveyTest from "../SurveyTest";
 
 const Routes = () => {
     const { token } = useAuth();
+
+    const routesForPublic = [
+        {
+            path: "/",
+            element: <Login/>
+        }
+    ]
     
     const routesForAuthenticatedOnly = [
         {
@@ -57,12 +64,12 @@ const Routes = () => {
     
     const routesforNotAuthenticatedOnly = [
         {
-            path: "/",
-            element: <Login/>,
+
         },
     ];
     
     const router = createBrowserRouter([
+        ...routesForPublic,
         ...(!token ? routesforNotAuthenticatedOnly : []),
         ...routesForAuthenticatedOnly,
     ]);

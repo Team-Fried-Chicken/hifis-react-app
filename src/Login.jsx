@@ -31,8 +31,12 @@ import Header from "./Header-notlogin";
 const Login = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const { setToken } = useAuth();
+	const { token, setToken } = useAuth();
 	const navigate = useNavigate();
+
+	const loggedIn = token
+
+	
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -56,6 +60,13 @@ const Login = () => {
 			console.error("Error during login:", error);
 		}
 	};
+
+	useEffect(() => {
+		// Check if user is already logged in
+		if (loggedIn) {
+		  navigate("/welcome");
+		}
+	  }, [loggedIn, navigate]);
 
 	return (
 		<>
