@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import MenuDesktop from "./Shared_Components/menu_desktop/menu_desktop";
 import axios from "axios";
 import { useAuth } from "./contexts/AuthProvider";
+import SurveyScroll from "./Survey-scrolling";
 
 const apiUrl = "http://localhost:3001/api";
 
@@ -24,14 +25,6 @@ const getCurrentTime = () => {
 };
 
 const NewSurvey = () => {
-	const [surveyData, setSurveyData] = useState({
-		surveyNo: "", // fetch from backend
-		pitShift: "",
-		timeTaken: getCurrentTime(), //well be current date and time
-		location: "",
-		comment: "",
-	});
-
 	const { token, user } = useAuth();
 
 	const [predictedSurveyNo, setPredictedSurveyNo] = useState("");
@@ -48,7 +41,7 @@ const NewSurvey = () => {
 			user.username
 		}, ${new Date().toLocaleDateString()}, @ FROM 8 PM to 12 AM`,
 	]);
-
+	
 	const authAxios = axios.create({
 		baseURL: apiUrl,
 		headers: {
@@ -59,35 +52,53 @@ const NewSurvey = () => {
 	useEffect(() => {
 		// Fetch predicted next surveyNo from the backend
 		const fetchPredictedSurveyNo = async () => {
-			try {
-				const response = await authAxios.get(`/predictedSurveyNo`);
-				setPredictedSurveyNo(response.data.predictedSurveyNo);
-			} catch (error) {
-				console.error("Error fetching predicted surveyNo:", error);
-			}
+		  try {
+			const response = await authAxios.get(`/predictedSurveyNo`);
+			setPredictedSurveyNo(response.data.predictedSurveyNo);
+		  } catch (error) {
+			console.error("Error fetching predicted surveyNo:", error);
+		  }
 		};
-
+	  
+		
 		fetchPredictedSurveyNo();
 	}, [token, authAxios]);
 
+	useEffect(() => {
+		setSurveyData((prevData) => ({
+		  ...prevData,
+		  surveyNo: predictedSurveyNo,
+		}));
+	  }, [predictedSurveyNo]);
+	
+	const [surveyData, setSurveyData] = useState({
+		surveyNo: predictedSurveyNo, // fetch from backend
+		pitShift: pitShiftOptions[0],
+		timeTaken: getCurrentTime(), //well be current date and time
+		location: "",
+		comment: "",
+	});
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-
+		console.log("Survey Data:", surveyData);
 		try {
-			const response = await axios.post("/api/createsurvey", surveyData);
-
-			if (response.status === 200) {
-				// Survey created successfully
-				// You might want to redirect the user or perform other actions
-			} else {
-				// Handle error response
-				console.error("Failed to create survey");
-			}
+			// Assuming `surveyData` contains the required data for creating a new survey
+		  const response = await authAxios.post("/createsurvey", surveyData);
+	  
+		  if (response.status === 200) {
+			// Survey created successfully
+			console.log("Survey created successfully");
+			// Optionally, you can redirect the user or perform other actions
+		  } else {
+			// Handle error response
+			console.error("Failed to create survey");
+		  }
 		} catch (error) {
-			// Handle network or other errors
-			console.error("Error creating survey:", error);
+		  // Handle network or other errors
+		  console.error("Error creating survey:", error);
 		}
-	};
+	  };
 
 	return (
 		<>
@@ -118,31 +129,31 @@ const NewSurvey = () => {
 
 					{/* one box input */}
 					<div className="question-container">
-						<label htmlFor="pitShift">
-							PiT Shift <span className="add-color">*</span>
-						</label>
-						<div className="input-container">
-							<select
-								name="pitShift"
-								id="pitShift"
-								className="input-box drp-box"
-								value={surveyData.pitShift}
-								onChange={(e) =>
-									setSurveyData((prevData) => ({
-										...prevData,
-										pitShift: e.target.value,
-									}))
-								}
-							>
-								{pitShiftOptions.map((option, index) => (
-									<option key={index} value={option}>
-										{option}
-									</option>
-								))}
-							</select>
-							<p className="error-ms">This field is required</p>
-						</div>
+					<label htmlFor="pitShift">
+						PiT Shift <span className="add-color">*</span>
+					</label>
+					<div className="input-container">
+					<select
+						name="pitShift"
+						id="pitShift"
+						className="input-box drp-box"
+						value={surveyData.pitShift}
+						onChange={(e) =>
+							setSurveyData((prevData) => ({
+							...prevData,
+							pitShift: e.target.value,
+							}))
+						}
+						>
+						{pitShiftOptions.map((option, index) => (
+							<option key={index} value={option}>
+							{option}
+							</option>
+						))}
+						</select>
 					</div>
+					</div>
+
 
 					{/* one box input */}
 					<div className="question-container">
@@ -165,11 +176,18 @@ const NewSurvey = () => {
 							Location<span className="add-color">*</span>
 						</label>
 						<div className="input-container">
-							<input
-								type="text"
-								name="location"
-								id="location"
-								className="input-box"
+						<input
+							type="text"
+							name="location"
+							id="location"
+							className="input-box"
+							value={surveyData.location}
+							onChange={(e) =>
+								setSurveyData((prevData) => ({
+								...prevData,
+								location: e.target.value,
+								}))
+							}
 							/>
 							<p className="error-ms">This field is required</p>
 						</div>
@@ -179,7 +197,18 @@ const NewSurvey = () => {
 					<div className="question-container">
 						<label htmlFor="comment">Comment</label>
 						<div className="input-container">
-							<textarea name="comment" id="comment" rows="5"></textarea>
+						<textarea
+							name="comment"
+							id="comment"
+							rows="5"
+							value={surveyData.comment}
+							onChange={(e) =>
+								setSurveyData((prevData) => ({
+								...prevData,
+								comment: e.target.value,
+								}))
+							}
+							></textarea>
 							<p className="error-ms"></p>
 						</div>
 					</div>
@@ -193,7 +222,7 @@ const NewSurvey = () => {
 					{/* submit btn */}
 					<div className="btn-container">
 						<div className="next-btn">
-							<button>Begin</button>
+						<button onClick={handleSubmit}>Begin</button>
 						</div>
 						<div></div>
 					</div>

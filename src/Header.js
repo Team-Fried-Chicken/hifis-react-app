@@ -24,7 +24,7 @@ const Header = () => {
 	const handleLogout = () => {
 		setToken();
 		setTimeout(() => {
-			navigate("/login");
+			navigate("/");
 		}, 3000);
 	};
 	return (
@@ -49,7 +49,7 @@ const Header = () => {
 					<p>Account</p>
 				</a>
 				<a
-					href="/login"
+					href="/"
 					className="nav-right"
 					onClick={(e) => {
 						e.preventDefault();
