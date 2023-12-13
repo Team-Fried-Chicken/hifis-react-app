@@ -97,7 +97,7 @@ const AllQuestions = () => {
                             <>
                                 {entry.Subquestion.map((sub, j) => (
                                     <div key={sub.QuestionID}>
-                                        <p><strong>{i + 1 + "." + j}</strong> {sub.Question}</p>
+                                        <p><strong>{i + 1 + "." + (j+1)}</strong> {sub.Question}</p>
                                         {sub.QuestionID <= 51 && (
                                             <select name="answers">
                                                 <option key="-1">Select...</option>
