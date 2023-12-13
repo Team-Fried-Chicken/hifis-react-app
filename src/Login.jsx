@@ -11,6 +11,7 @@ import { useAuth } from "./contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import axios from "axios"
+import Header from "./Header-notlogin";
 
 // const LoginError = () => {
 // 	return (
@@ -36,64 +37,65 @@ const Login = () => {
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		try {
-		  const response = await axios.post("http://localhost:3001/api/login", {
-			username: username,
-			password: password,
-		  });
-	  
-		  if (response.status === 200) {
-			const data = response.data;
-			console.log("User Information:", data.user);
-			const { userId, username } = data.user;
-			setToken(data.accessToken, { userId, username });
-			navigate("/welcome");
+			const response = await axios.post("http://localhost:3001/api/login", {
+				username: username,
+				password: password,
+			});
+
+			if (response.status === 200) {
+				const data = response.data;
+				console.log("User Information:", data.user);
+				const { userId, username } = data.user;
+				setToken(data.accessToken, { userId, username });
+				navigate("/welcome");
 
 			} else {
 				const error = await response.json();
 			}
 		} catch (error) {
-			console.error("Error during login:", error);			
+			console.error("Error during login:", error);
 		}
 	};
 
 	return (
 		<>
-		<div className="auth-container">
-			<div className="login-container">
-				<div className="langbox">
-					<img src={smallLogo} alt="logo" />
-					<button>EN</button>
-				</div>
-				<h2>LOG IN</h2>
+			<Header />
+			<div className="auth-container">
+				<div className="login-container">
+					<div className="langbox">
+						<img src={smallLogo} alt="logo" />
+						<button>EN</button>
+					</div>
+					<h2>LOG IN</h2>
 
-				<form onSubmit={handleLogin}>
-					<input
-						placeholder="username"
-						type="text"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)} required
-					/>
-					<input
-						placeholder="password"
-						type="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)} required
-					/>
-					<div className="forgot-password">
-						<a href="https://demo.hifis.ca/Account/ForgetPassword?Length=7">Forgot Password?</a>
-					</div>
-					<div className="login-button">
-						<button>Login</button>
-					</div>
-				</form>
+					<form onSubmit={handleLogin}>
+						<input
+							placeholder="username"
+							type="text"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)} required
+						/>
+						<input
+							placeholder="password"
+							type="password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)} required
+						/>
+						<div className="forgot-password">
+							<a href="https://demo.hifis.ca/Account/ForgetPassword?Length=7">Forgot Password?</a>
+						</div>
+						<div className="login-button">
+							<button>Login</button>
+						</div>
+					</form>
+				</div>
+				<img src={handshake} alt="handshake" id="login-image" />
+				<img src={darkCircle} alt="handshake" id="dark-circle" />
+				<img src={whiteCircle} alt="handshake" id="white-circle" />
+				<img src={darkkCircle} alt="handshake" id="green-circle" />
+				{/* <LoginError /> */}
 			</div>
-			<img src={handshake} alt="handshake" id="login-image" />
-			<img src={darkCircle} alt="handshake" id="dark-circle" />
-			<img src={whiteCircle} alt="handshake" id="white-circle" />
-			<img src={darkkCircle} alt="handshake" id="green-circle" />
-			{/* <LoginError /> */}
-		</div>
-		<Footer/>
+			<Footer />
 		</>
 	);
 };
