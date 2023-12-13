@@ -1,4 +1,4 @@
-import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useAuth } from "../contexts/AuthProvider"
 import { ProtectedRoute } from "./ProtectedRoute"
 import WelcomePage from "../WelcomePage";
@@ -13,61 +13,62 @@ import SurveyTest from "../SurveyTest";
 
 const Routes = () => {
     const { token } = useAuth();
-    
+
     const routesForAuthenticatedOnly = [
         {
             path: "/",
-            element: <ProtectedRoute/>,
+            element: <ProtectedRoute />,
             children: [
                 {
                     path: "/welcome",
-                    element: <WelcomePage/>,
+                    element: <WelcomePage />,
                 },
                 {
                     path: "/addevent",
-                    element: <NewSurvey/>,
+                    element: <NewSurvey />,
                 },
                 {
                     path: "/addevent-scrolling",
-                    element: <NewSurveyScroll/>,
+                    element: <NewSurveyScroll />,
                 },
                 {
                     path: "/surveypaging",
-                    element: <SurveyPaging/>,
+                    element: <SurveyPaging />,
                 },
                 {
                     path: "/surveyscrolling",
-                    element: <SurveyScroll/>,
+                    element: <SurveyScroll />,
                 },
                 {
                     path: "/surveyend",
-                    element: <EndSurvey/>,
+                    element: <EndSurvey />,
                 },
                 {
                     path: "/surveylists",
-                    element: <SurveyLists/>,
+                    element: <SurveyLists />,
                 },
                 {
                     path: "/surveytest",
-                    element: <SurveyTest/>,
+                    element: <SurveyTest />,
                 },
+
             ],
         },
     ];
-    
+
     const routesforNotAuthenticatedOnly = [
         {
             path: "/",
-            element: <Login/>,
+            element: <Login />,
         },
     ];
-    
+
     const router = createBrowserRouter([
         ...(!token ? routesforNotAuthenticatedOnly : []),
         ...routesForAuthenticatedOnly,
     ]);
-    
-    return <RouterProvider router={router}/>;
+
+    return <RouterProvider router={router} />;
 };
 
 export default Routes;
